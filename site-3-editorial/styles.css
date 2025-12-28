@@ -53,7 +53,7 @@ ol {
 .nav-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,7 +123,7 @@ ol {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-lg);
 }
 
 .hero {
@@ -306,7 +306,7 @@ main {
 
 .site-footer {
   border-top: 3px solid var(--color-text);
-  padding: var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-lg);
   margin-top: var(--spacing-xl);
 }
 
