@@ -10,6 +10,18 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="password-overlay" id="passwordOverlay">
+    <div class="password-container">
+      <h2>Protected Content</h2>
+      <p>Please enter the password to view this case study.</p>
+      <form class="password-form" id="passwordForm">
+        <input type="password" class="password-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
+        <span class="password-error" id="passwordError">Incorrect password. Please try again.</span>
+        <button type="submit" class="password-submit">View Project</button>
+      </form>
+    </div>
+  </div>
+
   <header class="site-header">
     <nav class="nav-container">
       <a href="index.html" class="logo">Pavithra Aravindan</a>
@@ -247,6 +259,37 @@
           targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    // Password protection
+    const PASSWORD = 'pavithra';
+    const STORAGE_KEY = 'portfolio_access';
+    const overlay = document.getElementById('passwordOverlay');
+    const form = document.getElementById('passwordForm');
+    const input = document.getElementById('passwordInput');
+    const error = document.getElementById('passwordError');
+
+    if (sessionStorage.getItem(STORAGE_KEY) === 'granted') {
+      overlay.classList.add('hidden');
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (input.value === PASSWORD) {
+        sessionStorage.setItem(STORAGE_KEY, 'granted');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+      } else {
+        error.classList.add('show');
+        input.value = '';
+        input.focus();
+      }
+    });
+
+    input.addEventListener('input', function() {
+      error.classList.remove('show');
     });
   </script>
 </body>
