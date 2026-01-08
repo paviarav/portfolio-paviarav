@@ -199,7 +199,7 @@ main {
 
 .project-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-md);
 }
 
@@ -215,14 +215,6 @@ main {
   color: var(--color-bg);
 }
 
-.project-card:first-child {
-  grid-row: span 2;
-}
-
-.project-card:first-child .placeholder-image {
-  aspect-ratio: 4/3;
-}
-
 .project-card h3 {
   font-family: var(--font-heading);
   font-size: 1.75rem;
@@ -230,10 +222,6 @@ main {
   padding: var(--spacing-md);
   padding-bottom: var(--spacing-xs);
   line-height: 1.2;
-}
-
-.project-card:first-child h3 {
-  font-size: 2.5rem;
 }
 
 .project-card p {
