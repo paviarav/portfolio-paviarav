@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response Generator - Pavithra Aravindan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-container">
+            <h2>Protected Content</h2>
+            <p>Please enter the password to view this case study.</p>
+            <form class="password-form" id="passwordForm">
+                <input type="password" class="password-input" id="passwordInput" placeholder="Enter password"
+                    autocomplete="off">
+                <span class="password-error" id="passwordError">Incorrect password. Please try again.</span>
+                <button type="submit" class="password-submit">View Project</button>
+            </form>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Pavithra Aravindan</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="https://www.linkedin.com/in/pavithraaravindan/" target="_blank" rel="noopener noreferrer"
+                        class="nav-linkedin" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="case-study with-toc">
+        <nav class="toc-sidebar">
+            <ul class="toc-list">
+                <li><a href="#overview" class="toc-link">Overview</a></li>
+                <li><a href="#problem" class="toc-link">Problem</a></li>
+                <li><a href="#solution" class="toc-link">Solution</a></li>
+                <li><a href="#design-decisions" class="toc-link">Key Design Decisions</a></li>
+                <li><a href="#example-flow" class="toc-link">Example Flow</a></li>
+                <li><a href="#impact" class="toc-link">Impact</a></li>
+                <li><a href="#demonstrates" class="toc-link">What This Demonstrates</a></li>
+                <li><a href="#next-steps" class="toc-link">What I’d Do Next</a></li>
+            </ul>
+        </nav>
+        <article>
+            <header class="case-study-header">
+                <h1>Response Generator for Seller Support Associates</h1>
+                <p class="subtitle">Designing a scalable, multilingual LLM experience for high-volume customer support
+                </p>
+                <div class="meta">
+                    <div class="meta-item">
+                        <span class="meta-label">My Role</span>
+                        <span class="meta-value">Senior UX Designer (End-to-end ownership)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Timeline</span>
+                        <span class="meta-value">2024–2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team</span>
+                        <span class="meta-value">Product, Applied Science, Engineering, Ops, Auditing</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value">Launched globally (100% dial-up)</span>
+                    </div>
+                </div>
+            </header>
+
+            <section id="overview" class="case-section collapsible open">
+                <h2 class="section-toggle">Overview</h2>
+                <div class="section-content">
+                    <p>Seller Support associates handle millions of email-based support cases every year. Writing
+                        accurate, policy-compliant, and empathetic responses—often in non-English languages—was
+                        time-consuming, inconsistent, and difficult to audit at scale.</p>
+                    <p>I led UX for Response Generator, an LLM-powered authoring tool embedded directly into the
+                        associate workflow. The system helps associates draft high-quality responses using structured
+                        annotations, case context, and SOPs—while preserving human control, auditability, and trust.</p>
+                    <p>The feature is now fully launched worldwide, supporting both English and non-English cases, with
+                        60% of external responses using AI and ~30% sent with no edits after launch.</p>
+                </div>
+            </section>
+
+            <section id="problem" class="case-section collapsible open">
+                <h2 class="section-toggle">Problem</h2>
+                <div class="section-content">
+                    <h3>Associate pain points</h3>
+                    <ul>
+                        <li>Writing responses from scratch increased Average Handle Time (AHT) and cognitive load.</li>
+                        <li>Inconsistent tone, structure, and policy adherence across regions.</li>
+                        <li>Non-English responses required translation or linguistic support.</li>
+                        <li>Auditors had no visibility into what AI generated vs. what the associate edited.</li>
+                    </ul>
+
+                    <h3>Business & system constraints</h3>
+                    <ul>
+                        <li>Extremely high-volume workflows (seconds matter).</li>
+                        <li>Strict policy, quality, and compliance requirements.</li>
+                        <li>AI could not fully replace human judgment.</li>
+                        <li>Adoption had to be voluntary and measurable, not forced.</li>
+                    </ul>
+
+                    <h3>Design Goals</h3>
+                    <ul>
+                        <li>Reduce drafting time without sacrificing quality or control</li>
+                        <li>Work inside existing workflows (no context switching)</li>
+                        <li>Support multilingual cases by default</li>
+                        <li>Make AI output transparent and auditable</li>
+                        <li>Enable real adoption, not dark-pattern usage</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="solution" class="case-section collapsible open">
+                <h2 class="section-toggle">Solution</h2>
+                <div class="section-content">
+                    <p>Core UX pattern: “Structured intent → Generated response”</p>
+                    <p>Instead of prompting associates to “chat with AI,” the design anchors generation around how
+                        associates already work:</p>
+                    <ul>
+                        <li>Associate writes structured annotations (resolution intent, research, actions taken)</li>
+                        <li>AI generates a full seller-ready response</li>
+                        <li>Associate can edit, regenerate, bypass, or send as-is</li>
+                        <li>Auditors see the original AI output vs. final sent response</li>
+                    </ul>
+                    <p>This keeps the associate firmly “in the loop.”</p>
+                </div>
+            </section>
+
+            <section id="design-decisions" class="case-section collapsible open">
+                <h2 class="section-toggle">Key Design Decisions</h2>
+                <div class="section-content">
+                    <h3>1. Designing annotations, not prompts</h3>
+                    <p>Early versions revealed that 69% of associates were typing full emails into the input
+                        field—negating AI benefits and skewing metrics.</p>
+                    <p><strong>UX response:</strong></p>
+                    <ul>
+                        <li>Reframed the input as “Describe the resolution outcome”</li>
+                        <li>Added inline guidance to reinforce notes vs. email mental model</li>
+                        <li>Anchored generation on structured case fields (reason codes, workflows)</li>
+                    </ul>
+
+                    <h3>2. Optional AI, not forced AI</h3>
+                    <p>A version that removed the AI bypass increased confusion and reduced trust—especially among
+                        specialized teams like Paid Seller Support.</p>
+                    <p><strong>UX decision:</strong> Re-introduce an explicit AI bypass, making usage intentional and
+                        measurable.</p>
+                    <p><strong>Result:</strong> cleaner adoption data and higher trust from experienced associates.</p>
+
+                    <h3>3. Multilingual by default</h3>
+                    <p>The system automatically detects the case’s dominant language and generates responses using
+                        Claude Sonnet 3.7’s native multilingual capabilities, covering 13 languages representing 99.5%
+                        of non-English cases.</p>
+                    <p><strong>UX considerations:</strong></p>
+                    <ul>
+                        <li>Clear language indicators</li>
+                        <li>Safe fallback to English</li>
+                        <li>Human auditing before global dial-up</li>
+                    </ul>
+
+                    <h3>4. Audit-first AI UX</h3>
+                    <p>For auditors, “black box AI” was unacceptable. I partnered with auditing teams to design:</p>
+                    <ul>
+                        <li>A dedicated audit view showing the raw AI-generated response</li>
+                        <li>Visibility into whether associates edited or sent as-is</li>
+                        <li>Weekly audit workflows that fit existing QA processes</li>
+                    </ul>
+                    <p>This was critical for leadership approval and global rollout.</p>
+                </div>
+            </section>
+
+            <section id="example-flow" class="case-section collapsible open">
+                <h2 class="section-toggle">Example Flow (From the Mocks)</h2>
+                <div class="section-content">
+                    <ul>
+                        <li>Associate enters resolution details (structured notes)</li>
+                        <li>Clicks Generate response</li>
+                        <li>Reviews AI-generated email with SOP links auto-inserted</li>
+                        <li>Edits or sends directly</li>
+                        <li>AI output + final message are logged for audit</li>
+                    </ul>
+                    <p><em>(See response preview and audit screens in the attached mocks - Placeholder)</em></p>
+                </div>
+            </section>
+
+            <section id="impact" class="case-section collapsible open">
+                <h2 class="section-toggle">Impact</h2>
+                <div class="section-content">
+                    <h3>Quantitative</h3>
+                    <ul>
+                        <li>60% of external seller responses now use AI</li>
+                        <li>~30% sent with no edits, indicating high trust</li>
+                        <li>AHT improvements observed (up to ~60 seconds in earlier pilots)</li>
+                        <li>Statistically significant workload reduction across regions (EU, FE, NA)</li>
+                    </ul>
+                    <h3>Qualitative (Associate feedback)</h3>
+                    <ul>
+                        <li>“This significantly cuts the email response drafting time.”</li>
+                        <li>“I still write fast, but I use the generated phrases all the time.”</li>
+                        <li>“Amazing!!!”</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="demonstrates" class="case-section collapsible open">
+                <h2 class="section-toggle">What This Project Demonstrates</h2>
+                <div class="section-content">
+                    <ul>
+                        <li>Designing human-in-the-loop AI systems</li>
+                        <li>Translating LLM capabilities into real operational UX</li>
+                        <li>Balancing trust, control, and efficiency</li>
+                        <li>Iterating based on behavioral data, not assumptions</li>
+                        <li>Shipping AI at global, enterprise scale</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="next-steps" class="case-section collapsible open">
+                <h2 class="section-toggle">What I’d Do Next</h2>
+                <div class="section-content">
+                    <ul>
+                        <li>Scenario-based onboarding inside the tool</li>
+                        <li>Inline quality signals before sending responses</li>
+                        <li>Cost optimization via newer LLMs (Sonnet 4.5)</li>
+                        <li>Deeper intent-aware response personalization</li>
+                    </ul>
+                </div>
+            </section>
+
+            <nav class="case-nav">
+                <a href="index.html" class="next-project">Back to Home</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <a href="mailto:pavithra.aravindan@gmail.com" class="footer-email">pavithra.aravindan@gmail.com</a>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img class="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            this.classList.toggle('open');
+            document.querySelector('.nav-links').classList.toggle('open');
+        });
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('.lightbox-img');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+        document.querySelectorAll('.case-study img').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function () {
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.section-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                this.closest('.collapsible').classList.toggle('open');
+            });
+        });
+
+        // TOC scroll tracking
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('.case-section[id]');
+
+        function updateActiveToc() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveToc);
+        updateActiveToc();
+
+        // Smooth scroll for TOC links
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Password protection
+        const PASSWORD = 'pepper';
+        const STORAGE_KEY = 'portfolio_access';
+        const overlay = document.getElementById('passwordOverlay');
+        const form = document.getElementById('passwordForm');
+        const input = document.getElementById('passwordInput');
+        const error = document.getElementById('passwordError');
+
+        if (sessionStorage.getItem(STORAGE_KEY) === 'granted') {
+            overlay.classList.add('hidden');
+        } else {
+            document.body.style.overflow = 'hidden';
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (input.value === PASSWORD) {
+                sessionStorage.setItem(STORAGE_KEY, 'granted');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            } else {
+                error.classList.add('show');
+                input.value = '';
+                input.focus();
+            }
+        });
+
+        input.addEventListener('input', function () {
+            error.classList.remove('show');
+        });
+    </script>
+</body>
+
+</html>
