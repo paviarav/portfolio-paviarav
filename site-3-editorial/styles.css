@@ -208,6 +208,7 @@ main {
   border: 2px solid var(--color-border);
   transition: all 0.2s;
   position: relative;
+  padding: 1.5rem; /* Add padding to reduce content width */
 }
 
 .project-card:hover {
@@ -219,14 +220,13 @@ main {
   font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 400;
-  padding: var(--spacing-md);
-  padding-bottom: var(--spacing-xs);
+  padding: var(--spacing-md) 0 var(--spacing-xs) 0; /* Remove horizontal padding */
   line-height: 1.2;
 }
 
 .project-card p {
   font-size: 0.9rem;
-  padding: 0 var(--spacing-md) var(--spacing-md);
+  padding: 0 0 var(--spacing-md) 0; /* Remove horizontal padding */
 }
 
 .placeholder-image {
