@@ -1568,3 +1568,11 @@ main {
 .password-error.show {
   display: block;
 }
+
+.lead-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+}
