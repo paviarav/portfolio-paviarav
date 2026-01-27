@@ -940,6 +940,21 @@ main {
   margin-bottom: var(--spacing-xl);
 }
 
+.prototype-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: var(--spacing-md) 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.prototype-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .goals-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
