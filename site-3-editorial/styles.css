@@ -955,6 +955,18 @@ main {
   border: none;
 }
 
+.prototype-link {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+  color: var(--color-accent);
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.prototype-link:hover {
+  opacity: 0.75;
+}
+
 .goals-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
